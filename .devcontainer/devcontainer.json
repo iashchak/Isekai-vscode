@@ -1,0 +1,23 @@
+{
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "features":{
+    "ghcr.io/devcontainers/features/docker-in-docker:2":{
+    }
+  },
+  "forwardPorts":[
+  ],
+  "customizations":{
+    "vscode":{
+      "extensions":[
+        "github.copilot",
+        "github.vscode-github-actions",
+        "mechatroner.rainbow-csv",
+        "esbenp.prettier-vscode"
+      ],
+      "settings":{
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": false
+      }
+    }
+  }
+}
