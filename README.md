@@ -1,32 +1,37 @@
-# Isekai VSCode
+# Hello World (Vue)
 
-<a href="https://marketplace.visualstudio.com/items?itemName=antfu.isekai-vscode" target="__blank"><img src="https://img.shields.io/visual-studio-marketplace/v/iashchak.isekai-vscode.svg?color=eee&amp;label=VS%20Code%20Marketplace&logo=visual-studio-code" alt="Visual Studio Marketplace Version" /></a>
-<a href="https://kermanx.github.io/reactive-vscode/" target="__blank"><img src="https://img.shields.io/badge/made_with-reactive--vscode-%23007ACC?style=flat&labelColor=%23229863"  alt="Made with reactive-vscode" /></a>
+This is an implementation of the default [Hello World](https://github.com/microsoft/vscode-webview-ui-toolkit-samples/tree/main/default/hello-world) sample extension that demonstrates how to set up and use a [Vue](https://vuejs.org/) + [Webview UI Toolkit](https://github.com/microsoft/vscode-webview-ui-toolkit) webview extension.
 
-## Configurations
+![A screenshot of the sample extension.](./assets/hello-world.png)
 
-<!-- configs -->
+## Documentation
 
-**No data**
+For a deeper dive into how this sample works, read the guides below.
 
-<!-- configs -->
+- [Extension structure](./docs/extension-structure.md)
+- [Extension commands](./docs/extension-commands.md)
+- [Extension development cycle](./docs/extension-development-cycle.md)
 
-## Commands
+## Run The Sample
 
-<!-- commands -->
+```bash
+# Copy sample extension locally
+npx degit microsoft/vscode-webview-ui-toolkit-samples/frameworks/hello-world-vue hello-world
 
-**No data**
+# Navigate into sample directory
+cd hello-world
 
-<!-- commands -->
+# Install dependencies for both the extension and webview UI source code
+npm run install:all
 
-## Sponsors
+# Build webview UI source code
+npm run build:webview
 
-<p align="center">
-  <a href="https://cdn.jsdelivr.net/gh/iashchak/static/sponsors.svg">
-    <img src='https://cdn.jsdelivr.net/gh/iashchak/static/sponsors.png'/>
-  </a>
-</p>
+# Open sample in VS Code
+code .
+```
 
-## License
+Once the sample is open inside VS Code you can run the extension by doing the following:
 
-[MIT](./LICENSE.md) License © 2025 [Andrei Iashchak](https://github.com/iashchak)
+1. Press `F5` to open a new Extension Development Host window
+2. Inside the host window, open the command palette (`Ctrl+Shift+P` or `Cmd+Shift+P` on Mac) and type `Hello World (Vue): Show`

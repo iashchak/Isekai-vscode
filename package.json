@@ -2,70 +2,47 @@
   "publisher": "iashchak",
   "name": "isekai-vscode",
   "displayName": "isekai",
-  "version": "0.0.1",
-  "private": true,
-  "packageManager": "pnpm@9.7.1",
-  "description": "",
-  "author": "Andrei Iashchak <andrey.yashchak@gmail.com>",
-  "license": "MIT",
-  "funding": "https://github.com/sponsors/iashchak",
-  "homepage": "https://github.com/iashchak/isekai-vscode",
+  "description": "Helper utility to write Isekai json files",
+  "version": "0.0.2",
   "repository": {
     "type": "git",
     "url": "https://github.com/iashchak/isekai-vscode.git"
   },
-  "categories": [
-    "Other"
-  ],
-  "main": "./dist/index.js",
-  "icon": "res/icon.png",
-  "files": [
-    "LICENSE.md",
-    "dist/*",
-    "res/*"
-  ],
   "engines": {
-    "vscode": "^1.92.0"
+    "vscode": "^1.75.0"
   },
+  "main": "./out/extension.js",
   "activationEvents": [
     "onStartupFinished"
   ],
   "contributes": {
-    "commands": [],
-    "configuration": {
-      "type": "object",
-      "title": "ext-name",
-      "properties": {}
-    }
+    "commands": [
+      {
+        "command": "hello-world.showHelloWorld",
+        "title": "Hello World (Vue): Show"
+      }
+    ]
   },
   "scripts": {
-    "build": "tsup src/index.ts --external vscode",
-    "dev": "nr build --watch",
-    "prepare": "nr update",
-    "update": "vscode-ext-gen --output src/generated/meta.ts",
-    "lint": "eslint .",
-    "vscode:prepublish": "nr build",
-    "publish": "vsce publish --no-dependencies",
-    "pack": "vsce package --no-dependencies",
-    "test": "vitest",
-    "typecheck": "tsc --noEmit",
-    "release": "bumpp && nr publish"
+    "install:all": "npm install && cd webview-ui && npm install",
+    "start:webview": "cd webview-ui && npm run start",
+    "build:webview": "cd webview-ui && npm run build",
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^2.26.0",
-    "@antfu/ni": "^0.22.4",
-    "@types/node": "^22.4.1",
-    "@types/vscode": "^1.92.0",
-    "@vscode/vsce": "^3.0.0",
-    "bumpp": "^9.5.1",
-    "eslint": "^9.9.0",
-    "esno": "^4.7.0",
-    "pnpm": "^9.7.1",
-    "reactive-vscode": "^0.2.0",
-    "tsup": "^8.2.4",
-    "typescript": "^5.5.4",
-    "vite": "^5.4.1",
-    "vitest": "^2.0.5",
-    "vscode-ext-gen": "^0.4.1"
+    "@types/glob": "^7.1.3",
+    "@types/node": "^12.11.7",
+    "@types/vscode": "^1.46.0",
+    "@typescript-eslint/eslint-plugin": "^4.14.1",
+    "@typescript-eslint/parser": "^4.14.1",
+    "eslint": "^7.19.0",
+    "glob": "^7.1.6",
+    "prettier": "^2.2.1",
+    "typescript": "^4.1.3",
+    "vscode-test": "^1.5.0"
   }
 }
