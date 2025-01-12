@@ -1,24 +1,18 @@
 {
-  "publisher": "antfu",
-  "name": "ext-name",
-  "displayName": "ext-name",
-  "version": "0.0.0",
+  "publisher": "iashchak",
+  "name": "isekai-vscode",
+  "displayName": "isekai",
+  "version": "0.0.1",
   "private": true,
   "packageManager": "pnpm@9.7.1",
   "description": "",
-  "author": "Anthony Fu <anthonyfu117@hotmail.com>",
+  "author": "Andrei Iashchak <andrey.yashchak@gmail.com>",
   "license": "MIT",
-  "funding": "https://github.com/sponsors/antfu",
-  "homepage": "https://github.com/antfu/ext-name#readme",
+  "funding": "https://github.com/sponsors/iashchak",
+  "homepage": "https://github.com/iashchak/isekai-vscode",
   "repository": {
     "type": "git",
-    "url": "https://github.com/antfu/ext-name"
-  },
-  "bugs": {
-    "url": "https://github.com/antfu/ext-name/issues"
-  },
-  "sponsor": {
-    "url": "https://github.com/sponsors/antfu"
+    "url": "https://github.com/iashchak/isekai-vscode.git"
   },
   "categories": [
     "Other"

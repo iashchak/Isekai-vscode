@@ -24,15 +24,6 @@ jobs:
           node-version: lts/*
           cache: pnpm
 
-      - name: Setup
-        run: npm i -g @antfu/ni
-
-      - name: Install
-        run: nci
-
-      - name: Lint
-        run: nr lint
-
   typecheck:
     runs-on: ubuntu-latest
     steps:
@@ -46,15 +37,6 @@ jobs:
         with:
           node-version: lts/*
           cache: pnpm
-
-      - name: Setup
-        run: npm i -g @antfu/ni
-
-      - name: Install
-        run: nci
-
-      - name: Typecheck
-        run: nr typecheck
 
   test:
     runs-on: ${{ matrix.os }}
@@ -76,15 +58,3 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
           cache: pnpm
-
-      - name: Setup
-        run: npm i -g @antfu/ni
-
-      - name: Install
-        run: nci
-
-      - name: Build
-        run: nr build
-
-      - name: Test
-        run: nr test
